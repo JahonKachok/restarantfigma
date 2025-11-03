@@ -1,0 +1,36 @@
+.navbar-container {
+    background-color: #292E36;
+    height: 370px;
+    color: white;
+    // 288 82
+    .navbar-top {
+        padding: 20px 100px;
+        border-bottom: white 0.1px solid;
+       .nav-img{
+        width: 378;
+        height: 188;
+       }
+       .call-numb{
+        width: 295px;
+        height: 73px;
+        border: #E1B168 2px solid;
+        font-size: 22px;
+       }
+       .nav-btn{
+        width: 295px;
+        height: 73px;
+        background-color: #E1B168;
+        font-size: 22px;
+        color: black;
+       }
+    }
+    .navbar-bottom li{ 
+    list-style: none;   
+    }
+    .navbar-bottom{
+        height: 82px;
+        font-size: 20px;
+        bottom: 5px;
+        
+    }
+}
