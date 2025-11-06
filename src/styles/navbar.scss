@@ -1,36 +1,153 @@
 .navbar-container {
+  background-color: #292E36;
+  color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+
+  .navbar-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 5%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     background-color: #292E36;
-    height: 370px;
-    color: white;
-    // 288 82
-    .navbar-top {
-        padding: 20px 100px;
-        border-bottom: white 0.1px solid;
-       .nav-img{
-        width: 378;
-        height: 188;
-       }
-       .call-numb{
-        width: 295px;
-        height: 73px;
-        border: #E1B168 2px solid;
-        font-size: 22px;
-       }
-       .nav-btn{
-        width: 295px;
-        height: 73px;
+    position: relative;
+    .nav-btn {
+      border: 2px solid #e1b168;
+      padding: 8px 20px;
+      font-size: 16px;
+      background-color: #292e36;
+      color: #e1b168;
+      width: fit-content;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: #e1b168;
+        color: #292e36;
+      }
+    }
+    .call-numb{
+        border: 2px solid #e1b168;
+      padding: 8px 20px;
+      font-size: 16px;
+      background-color: #292e36;
+      color: #e1b168;
+      width: fit-content;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .call-numb, .nav-img, .nav-btn {
+      z-index: 10; /* hamburger ustida bo‘lishi uchun */
+    }
+
+    /* Hamburger tugmasi */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 22px;
+      cursor: pointer;
+      z-index: 20;
+      position: absolute;
+      right: 10px;
+      top: 15px;
+
+      span {
+        height: 4px;
+        width: 100%;
         background-color: #E1B168;
-        font-size: 22px;
-        color: black;
-       }
+        border-radius: 2px;
+        transition: all 0.3s ease;
+      }
+
+      &.active span:nth-child(1) {
+        transform: rotate(45deg) translateY(9px);
+      }
+      &.active span:nth-child(2) {
+        opacity: 0;
+      }
+      &.active span:nth-child(3) {
+        transform: rotate(-45deg) translateY(-9px);
+      }
     }
-    .navbar-bottom li{ 
-    list-style: none;   
+  }
+
+  .navbar-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 15px 5%;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+    background-color: #292E36;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    overflow: hidden;
+
+    &.open {
+      max-height: 500px;
+      opacity: 1;
     }
-    .navbar-bottom{
-        height: 82px;
-        font-size: 20px;
-        bottom: 5px;
-        
+
+    .menu-list {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 25px;
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 0;
+      font-size: 18px;
+
+      li {
+        cursor: pointer;
+        transition: 0.3s;
+        &:hover { color: #E1B168; }
+      }
     }
+
+    .social-media img {
+      width: 25px;
+      height: 25px;
+      cursor: pointer;
+      transition: 0.3s;
+      &:hover { transform: scale(1.2); }
+    }
+  }
+
+  /* Mobile responsiv */
+  @media (max-width: 768px) {
+    .hamburger {
+      display: flex;
+    }
+
+    .navbar-bottom {
+      flex-direction: column;
+      max-height: 0;
+      opacity: 0;
+      pointer-events: none;
+
+      &.open {
+        max-height: 500px;
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .menu-list {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  }
+}
+
+/* Pastdagi kontent navbar ostiga kirib ketmasligi uchun */
+body {
+  padding-top: 170px;
 }

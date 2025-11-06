@@ -1,0 +1,78 @@
+.about {
+  background-color: #fff; // orqa fon oq
+  color: #000;
+  padding: 100px 0;
+
+  .about-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 5%;
+
+    .about-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .location {
+      flex: 1 1 30%;
+      background-color: #f9f9f9;
+      border: 1px solid #e1b168;
+      border-radius: 12px;
+      padding: 25px 30px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+
+      &:hover {
+        background-color: #fffaf2;
+        transform: translateY(-5px);
+      }
+
+      .about-icon {
+        width: 60px;
+        height: 60px;
+      }
+
+      .about-title {
+        h3 {
+          font-size: 22px;
+          color: #292e36;
+          margin-bottom: 5px;
+        }
+
+        p {
+          font-size: 16px;
+          color: #555;
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  /* Responsiv holatlar */
+  @media (max-width: 992px) {
+    .about-top {
+      gap: 20px;
+    }
+
+    .location {
+      flex: 1 1 45%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .about-top {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .location {
+      flex: 1 1 100%;
+    }
+  }
+}
