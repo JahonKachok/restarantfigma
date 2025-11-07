@@ -1,13 +1,14 @@
 .about {
-  background-color: #fff; // orqa fon oq
+  background-color: #fff;
   color: #000;
   padding: 100px 0;
 
   .about-container {
-    max-width: 1300px;
+    max-width: 1500px;
     margin: 0 auto;
     padding: 0 5%;
 
+    /* --- Yuqori qism (about-top) --- */
     .about-top {
       display: flex;
       justify-content: space-between;
@@ -52,27 +53,163 @@
         }
       }
     }
+
+    /* --- Pastki qism (about-bot) --- */
+    .about-bot {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+      margin-top: 100px;
+      background-color: #fffaf2;
+      border-radius: 16px;
+      padding: 60px 50px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+
+     /* --- Yuqori qismdagi yozuv (address) bir qatorda turishi uchun --- */
+.about-top .about-title p {
+  white-space: nowrap;       /* Matnni bitta qatorda ushlab turadi */
+  overflow: hidden;          /* Ortiqcha qismi yashirinadi */
+  text-overflow: ellipsis;   /* Ortiqcha joyda "..." qo‘yiladi */
+  max-width: 100%;           /* To‘liq joydan foydalansin */
+  display: block;
+}
+
+/* --- Pastki qismdagi rasm (about-bot image) uchun --- */
+.about-bot-img {
+  flex: 1; /* Rasm va matn teng bo‘ladi */
+  display: flex;
+  justify-content: center;
+
+  img {
+    width: 100%;
+    height: auto;
+    max-width: 50vw; /* ✅ Ekranning yarmi (50%) ni egallasin */
+    object-fit: cover;
+    border-radius: 0; /* radius yo‘q */
+  }
+}
+
+
+
+      .about-bot-text {
+        flex: 1.2;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+
+        .title-bot {
+          h2 {
+            font-size: 36px;
+            color: #292e36;
+            margin-bottom: 10px;
+          }
+
+          p {
+            color: #555;
+            font-size: 17px;
+            line-height: 1.6;
+          }
+        }
+
+        .about-bot-info {
+          display: flex;
+          justify-content: space-between;
+          gap: 30px;
+
+          .info-item {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            flex: 1;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+
+            h3 {
+              font-size: 26px;
+              color:  #292e36;
+              margin-bottom: 8px;
+            }
+
+            p {
+              font-size: 15px;
+              color: #555;
+              margin: 0;
+            }
+          }
+        }
+
+        .about-signature {
+          margin-top: 20px;
+
+          h3 {
+            font-size: 20px;
+            letter-spacing: 3px;
+            color: #292e36;
+          }
+
+          img {
+            margin-top: 10px;
+            width: 150px;
+          }
+        }
+      }
+    }
   }
 
-  /* Responsiv holatlar */
+  /* --- RESPONSIVLIK --- */
   @media (max-width: 992px) {
-    .about-top {
-      gap: 20px;
-    }
+    .about-container {
+      .location {
+        flex: 1 1 45%;
+      }
 
-    .location {
-      flex: 1 1 45%;
+      .about-bot {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 25px;
+
+        .about-bot-img {
+          order: 1;
+          img {
+            max-width: 100%;
+          }
+        }
+
+        .about-bot-text {
+          order: 2;
+
+          .about-bot-info {
+            flex-direction: column;
+            align-items: center;
+
+            .info-item {
+              width: 100%;
+              max-width: 300px;
+            }
+          }
+        }
+      }
     }
   }
 
   @media (max-width: 600px) {
-    .about-top {
-      flex-direction: column;
-      align-items: stretch;
-    }
+    .about-container {
+      .location {
+        flex: 1 1 100%;
+      }
 
-    .location {
-      flex: 1 1 100%;
+      .about-bot {
+        padding: 30px 20px;
+        gap: 25px;
+
+        .title-bot h2 {
+          font-size: 28px;
+        }
+
+        .about-bot-info .info-item h3 {
+          font-size: 22px;
+        }
+      }
     }
   }
 }

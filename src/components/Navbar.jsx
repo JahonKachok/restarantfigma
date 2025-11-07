@@ -38,7 +38,7 @@ export default function Navbar() {
       {/* Pastki qism */}
       <div className={`navbar-bottom ${open ? "open" : ""}`}>
         <ul className='menu-list d-flex justify-content-around align-items-center flex-wrap'>
-          <li >Home</li>
+          <li  >Home</li>
           <li>About</li>
           <li>Menu</li>
           <li>Chefs</li>
