@@ -151,3 +151,19 @@
 body {
   padding-top: 170px;
 }
+//navbar linklari uchun stillar
+.nav-link {
+  color: #fff;
+  font-weight: 500;
+  position: relative;
+  transition: all 0.3s ease;
+
+  &.active {
+    color: #e1b168;
+    font-weight: 700;
+  }
+
+  &:hover {
+    color: #e1b168;
+  }
+}

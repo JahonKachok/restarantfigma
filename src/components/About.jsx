@@ -26,7 +26,7 @@ const aboutItems = [
 
 export default function About() {
   return (
-    <section className="about">
+    <section id="about" className="about">
       <div className="about-container container">
         <div className="about-top d-flex justify-content-between align-items-center flex-wrap">
           {aboutItems.map((item, index) => (

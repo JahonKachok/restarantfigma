@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import navImg from "../images/navbar-img.svg";
 import "../styles/navbar.scss";
 import insta from "../images/insta.svg";
@@ -8,6 +8,26 @@ import pic from "../images/pic.svg";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = document.querySelectorAll("section[id]");
+      let current = "home";
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 150; // navbar balandligi uchun offset
+        if (window.scrollY >= sectionTop) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      setActiveSection(current);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div className="navbar-container">
@@ -38,12 +58,17 @@ export default function Navbar() {
       {/* Pastki qism */}
       <div className={`navbar-bottom ${open ? "open" : ""}`}>
         <ul className='menu-list d-flex justify-content-around align-items-center flex-wrap'>
-          <li  >Home</li>
-          <li>About</li>
-          <li>Menu</li>
-          <li>Chefs</li>
-          <li>Gallery</li>
-          <li>Events</li>
+          {["home", "about", "menu", "chefs", "gallery", "events"].map((item) => (
+            <li key={item} className='nav-item'>
+              <a
+                className={`nav-link ${activeSection === item ? "active" : ""}`}
+                href={`#${item}`}
+                onClick={() => setOpen(false)} // link bosilganda menyu yopilsin
+              >
+                {item.charAt(0).toUpperCase() + item.slice(1)}
+              </a>
+            </li>
+          ))}
         </ul>
 
         <div className="social-media d-flex justify-content-center align-items-center gap-4 flex-wrap">
