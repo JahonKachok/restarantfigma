@@ -58,7 +58,7 @@ export default function Navbar() {
       {/* Pastki qism */}
       <div className={`navbar-bottom ${open ? "open" : ""}`}>
         <ul className='menu-list d-flex justify-content-around align-items-center flex-wrap'>
-          {["home", "about", "menu", "chefs", "gallery", "events"].map((item) => (
+          {["home", "about", "menu", "pages", "blog", "contact"].map((item) => (
             <li key={item} className='nav-item'>
               <a
                 className={`nav-link ${activeSection === item ? "active" : ""}`}

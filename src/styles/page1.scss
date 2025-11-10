@@ -1,0 +1,25 @@
+.page1{
+    background-color: #292E36;
+    font-family: Arial, sans-serif;
+    color: #FFFFFF;
+    padding: 20px;
+    .page1-container{
+        margin: 0 auto;
+        .title-pages{
+            h1{
+                font-size: 15px;
+                border-bottom: #e1b168 1px solid;
+                border-top: #e1b168 1px solid;
+                width: fit-content;
+
+            }
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    }
+}
+.swiper-button-next,
+.swiper-button-prev {
+  display: none !important;
+}

@@ -2,7 +2,7 @@ import About from "./components/About";
 import Home from "./components/Home";
 import Menu from "./components/Menu";
 import Navbar from "./components/Navbar";
-
+import Page1 from "./components/Page1";
 
 function App() {
   return (
@@ -11,6 +11,7 @@ function App() {
       <Home />
       <About />
       <Menu />
+      <Page1 />
     </div>
   );
 }

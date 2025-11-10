@@ -1,0 +1,39 @@
+.menu {
+  background-color: #fff;
+  color: #222;
+
+  .menu-btn {
+      border: 2px solid #e1b168;
+      padding: 8px 20px;
+      font-size: 16px;
+      background-color: white;
+      border-radius: 0px;
+      color: #e1b168;
+      width: fit-content;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: #e1b168;
+        color: #292e36;
+      }
+    }
+
+  .menu-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  @media (max-width: 768px) {
+    .menu-container {
+      flex-direction: column;
+      text-align: center;
+    }
+    .menu-right {
+      text-align: left;
+      padding: 0 1rem;
+    }
+  }
+}
