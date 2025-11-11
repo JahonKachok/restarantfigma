@@ -6,6 +6,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination } from "swiper/modules";
+import pagesBack from "../images/pagesBack.svg";
 
 
 export default function Page1() {
@@ -67,9 +68,9 @@ return (
       >
         {comments.map((c) => (
           <SwiperSlide key={c.id}>
-            <div className="comment-card ">
+            <div className="comment-card di-flex flex-column align-center p-4">
             <div className="comments-header d-flex align-center">
-                <img src={c.image} alt="rasm" />
+                <img className='user-avatar' src={c.image} alt="rasm" />
                 <div className="comments-title">
                 <h3>{c.name}</h3>
                 <h4>{c.location}</h4> 
@@ -86,8 +87,10 @@ return (
 
         </div>
     </div>
-
+<img className='pagesBack' src={pagesBack} alt="" />
     </div>
+    
 
   )
+  
 }
