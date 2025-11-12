@@ -44,9 +44,8 @@ export default function Page1() {
     },
 ];
 return (
-    <div className="page1">
-
-    
+    <div id='pages' className="page1">
+        
     <div className='page1-container container '>
         <div className="title-pages">
             <h1>TESTIMONIAL</h1>

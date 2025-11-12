@@ -123,9 +123,18 @@
 
   /* Mobile responsiv */
   @media (max-width: 768px) {
-    .hamburger {
+    .navbar-top {
+      .hamburger {
       display: flex;
     }
+    .call-numb{
+      display: none;  
+    }
+    .nav-btn{
+      display: none;
+    }
+    }
+    
 
     .navbar-bottom {
       flex-direction: column;
