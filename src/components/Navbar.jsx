@@ -11,22 +11,28 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
-    const handleScroll = () => {
-      const sections = document.querySelectorAll("section[id]");
-      let current = "home";
+    const sections = document.querySelectorAll("section[id]");
 
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 150; // navbar balandligi uchun offset
-        if (window.scrollY >= sectionTop) {
-          current = section.getAttribute("id");
-        }
-      });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: "-150px 0px -50% 0px", // fixed navbar offset
+        threshold: 0
+      }
+    );
 
-      setActiveSection(current);
+    sections.forEach(section => observer.observe(section));
+
+    return () => {
+      sections.forEach(section => observer.unobserve(section));
     };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -63,7 +69,7 @@ export default function Navbar() {
               <a
                 className={`nav-link ${activeSection === item ? "active" : ""}`}
                 href={`#${item}`}
-                onClick={() => setOpen(false)} // link bosilganda menyu yopilsin
+                onClick={() => setOpen(false)}
               >
                 {item.charAt(0).toUpperCase() + item.slice(1)}
               </a>

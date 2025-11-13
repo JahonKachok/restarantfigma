@@ -1,13 +1,14 @@
 import React from 'react'
 import dish1 from '..//images/dish1.svg'
 import dish2 from '..//images/dish2.svg'
+import '..//styles/page2.scss'
 
 export default function Page2() {
   return (
-    <div className='page-2'>
-        <div className="page-2-container">
-            <div className="page-2-title">
-                <h4> Offers</h4>
+    <div id='blog' className='page-2'>
+        <div className="page-2-container ">
+            <div className="page-2-title d-flex flex-column justify-content-center align-items-center text-center mb-5">
+                <h4> OFFERS</h4>
                 <h1>Our Offer dishes</h1>
                 <p>Our chefs create melt-in-your-mouth dishes that'll satiate even the fussiest eaters now the dishes are in offers use it based on hunger.</p>
             </div>

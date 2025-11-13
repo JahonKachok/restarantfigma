@@ -1,0 +1,88 @@
+.page-2 {
+  background-color: #f8f8f8;
+  padding: 80px 0;
+  font-family: 'Poppins', sans-serif;
+  color: #292e36;
+
+  .page-2-container {
+    width: 85%;
+    margin: 0 auto;
+    text-align: center;
+
+    .page-2-title {
+      margin-bottom: 50px;
+
+      h4 {
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        border-bottom: 1px solid #e1b168;
+        border-top: 1px solid #e1b168;
+        width: fit-content;
+        margin: 0 auto 15px;
+        padding: 5px 15px;
+        color: #e1b168;
+      }
+
+      h1 {
+        font-size: 42px;
+        font-weight: 700;
+        margin-bottom: 15px;
+      }
+
+      p {
+        font-size: 16px;
+        max-width: 700px;
+        margin: 0 auto;
+        color: #555;
+      }
+    }
+
+    .page-2-dishes {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 60px;
+
+      img {
+        width: clamp(250px, 45vw, 750px); // katta ekranda ikki baravar katta
+        height: auto;
+        border-radius: 20px;
+        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      }
+    }
+  }
+
+  // 📱 Mobil ekranlar uchun
+  @media (max-width: 768px) {
+    padding: 50px 0;
+
+    .page-2-container {
+      width: 90%;
+
+      .page-2-title {
+        h1 {
+          font-size: 28px;
+        }
+
+        p {
+          font-size: 15px;
+        }
+      }
+
+      .page-2-dishes {
+        flex-direction: column;
+        gap: 25px;
+
+        img {
+          width: 100%;
+          max-width: 420px; // telefonlarda o‘lchamni cheklash
+          height: auto;
+        }
+      }
+    }
+  }
+}
