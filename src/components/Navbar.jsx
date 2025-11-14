@@ -35,6 +35,7 @@ export default function Navbar() {
     };
   }, []);
 
+  const newLocal = "home";
   return (
     <div className="navbar-container">
       <div className="navbar-top d-flex justify-content-between align-items-center flex-wrap">
@@ -64,7 +65,7 @@ export default function Navbar() {
       {/* Pastki qism */}
       <div className={`navbar-bottom ${open ? "open" : ""}`}>
         <ul className='menu-list d-flex justify-content-around align-items-center flex-wrap'>
-          {["home", "about", "menu", "pages", "blog", "contact"].map((item) => (
+          {[newLocal, "about", "menu", "pages", "blog", "contact"].map((item) => (
             <li key={item} className='nav-item'>
               <a
                 className={`nav-link ${activeSection === item ? "active" : ""}`}

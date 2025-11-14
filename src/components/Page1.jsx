@@ -44,9 +44,9 @@ export default function Page1() {
     },
 ];
 return (
-    <div id='pages' className="page1">
-        
-    <div className='page1-container container '>
+    <section id='pages'>
+    <div  className="page1">
+         <div className='page1-container container '>
         <div className="title-pages">
             <h1>TESTIMONIAL</h1>
             <h3>Our clients say</h3>
@@ -88,7 +88,7 @@ return (
     </div>
 <img className='pagesBack' src={pagesBack} alt="" />
     </div>
-    
+    </section>
 
   )
   

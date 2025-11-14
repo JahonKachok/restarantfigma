@@ -5,7 +5,8 @@ import "../styles/home.scss";
 
 export default function Home() {
   return (
-    <div id="home" className="home">
+    <section id="home">
+    <div  className="home">
       <div className="home-container">
         <div className="home-content">
           <h1>Welcome to Restaurant</h1>
@@ -22,5 +23,6 @@ export default function Home() {
         </div>
       </div>
     </div>
+    </section>
   );
 }

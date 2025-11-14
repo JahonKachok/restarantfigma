@@ -5,7 +5,8 @@ import '..//styles/page2.scss'
 
 export default function Page2() {
   return (
-    <div id='blog' className='page-2'>
+    <section id='blog'>
+    <div  className='page-2'>
         <div className="page-2-container ">
             <div className="page-2-title d-flex flex-column justify-content-center align-items-center text-center mb-5">
                 <h4> OFFERS</h4>
@@ -19,5 +20,6 @@ export default function Page2() {
         </div>
 
     </div>
+    </section>
   )
 }

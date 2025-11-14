@@ -7,7 +7,8 @@ import pic from "../images/pic.svg";
 import '..//styles/footer.scss'
 export default function Footer() {
   return (
-    <div id='contact' className='footer'>
+    <section id='contact'>  
+    <div className='footer'>
         <div className="footer-container container">
             <div className="footer-top d-flex justify-content-between align-items-center flex-wrap">
                 <div className="xashtag">
@@ -55,5 +56,6 @@ export default function Footer() {
          </div>
         </div>
     </div>
+    </section>
   )
 }
